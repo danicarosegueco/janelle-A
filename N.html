@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pburritos</title>
+  <link href="m.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>PBurritsscratch</h1>
+    <div class="navbar">
+      <button onclick="showHome()">Home</button>
+      <button onclick="showMenu()">Menu</button>
+      <button onclick="showAbout()">About Us</button>
+      <button onclick="showTestimonials()">Testimonials</button>
+      <button onclick="showContact()">Contact</button>
+    </div>
+  </header> 
+  
+  <!-- Home/Landing Section -->
+<div id="home-section" style="display: block; padding: 60px 20px; text-align: center;"> 
+  <div id="header-image" style="position: relative; width: 100%; height: 70vh; overflow: hidden;">
+    <img src="fpimg/shawarma-chicken.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+     <!-- Overlay Text -->
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                text-align: center; color: white; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
+     <h1 style="font-size: 3rem; margin: 0;">Welcome to PBurritos</h1>
+     <p style="font-size: 1.5rem;">Delicious bites. Chilled drinks. Local love.</p>
+     Bold flavors, sweet treats, and refreshing drinks — all in one place. Your craving is just a click away</p>
+     <button onclick="showMenu()" style="padding: 12px 24px; font-size: 1rem; background: #b77b57; color: white; border: none; border-radius: 6px; cursor: pointer;">
+     Explore Menu</button> 
+    </div>
+  </div>
+  <section id="product-highlights">
+    <h2>Product Highlights</h2>
+    <div class="highlight-container">
+  
+      <div class="highlight-card">
+        <img src="fpimg/shawarma-chicken.jpg" alt="Shawarma Pie Chicken">
+        <h3>Shawarma Pie Chicken</h3>
+        <p>Our signature dish, marinated for 24 hours with a secret blend of spices.</p>
+      </div>
+  
+      <div class="highlight-card">
+        <img src="fpimg/blueberry.jpg" alt="Fruit Soda">
+        <h3>Fruit Soda</h3>
+        <p>Made with locally-sourced fruits and homemade syrup — 100% natural.</p>
+      </div>
+  
+      <div class="highlight-card">
+        <img src="fpimg/halohalo.jpg" alt="Halo-Halo Delight">
+        <h3>Halo-Halo Delight</h3>
+        <p>Voted top favorite with over 300 five-star reviews!</p>
+      </div>
+  
+    </div>
+  </section>  
+</div>  
+
+<div id="menu-section" style="display: none;">
+ <div class="controls">
+   <div class="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="Burritos">Burritos</button>
+    <button data-filter="Halo Halo">Halo Halo</button>
+    <button data-filter="Fruit Soda">Fruit Soda</button>
+    <button data-filter="Fruit Milk">Fruit Milk</button>
+   </div>
+   <button class="toggle-theme">Toggle Theme</button>
+ </div>
+<div id="food-list"></div>
+  <!-- View Cart button now includes the cart number -->
+  <button class="view-cart-btn" id="view-cart-btn">View Cart (0)</button>
+  <div class="cart-drawer" id="cart-drawer">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+      <button id="checkout-btn" style="padding: 10px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Checkout
+      </button>
+      <button id="close-cart" style="padding: 10px; background: #e5533e; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        Close
+      </button>
+    </div>
+    
+  </div>
+</div>
+
+<div id="cart-wrapper" style="display: none;">
+  <button class="view-cart-btn" id="view-cart-btn">View Cart (0)</button>
+</div>
+
+<div id="about-us-section" style="display: none; margin-top: 40px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <h2>About Us</h2>
+  <p style="margin-top: 10px; font-size: 1rem; line-height: 1.6;">
+    PBurritsscratch started with a simple idea: to bring the bold flavors of burritos and refreshing drinks to your table with a twist of local flair.
+    <br><br>
+    We’re a small passionate team dedicated to delivering delicious, freshly-prepared meals — fast, affordable, and always satisfying. Whether you're craving a quick lunch or a sweet treat, we’ve got something special for everyone.
+  </p>
+</div>
+
+<div id="testimonial-section" style="display: none; margin-top: 40px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); opacity: 0; transition: opacity 0.6s ease;">
+  <h2 style="margin-bottom: 20px;">What Our Customers Say</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    
+    <!-- Testimonial Card 1 -->
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Maria" />
+      <h4>Maria Santos</h4>
+      <p>"Absolutely love the burritos! Fresh, flavorful, and fast service every time."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <!-- Testimonial Card 2 -->
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="John" />
+      <h4>John Cruz</h4>
+      <p>"The fruit sodas are amazing and unique. I always come back for more!"</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <!-- Testimonial Card 3 -->
+    <div class="testimonial-card">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Anna" />
+      <h4>Anna Reyes</h4>
+      <p>"Halo-halo perfection! Sweet, cold, and a perfect treat on hot days."</p>
+      <div class="stars">★★★★★</div>
+    </div>
+ </div>
+</div>
+
+<div id="contact-us-section" style="display: none; margin-top: 40px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <h2>Contact Us</h2>
+  <p style="font-size: 1rem; line-height: 1.6; margin-top: 10px;">
+    Have any questions, concerns, or feedback? We’d love to hear from you! Reach out to us on Facebook by clicking the link below:
+  </p>
+  <p>
+    <a href="https://www.facebook.com/profile.php?id=61555426561366" target="_blank" style="color: #b77b57; text-decoration: none; font-size: 1.2rem; font-weight: bold;">
+      Visit our Facebook Page
+    </a>
+  </p>
+</div>
+<footer style="background:#b77b57; color:#fffaf2; padding: 40px 20px; margin-top: 60px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px; max-width: 1200px; margin: auto;">
+    <!-- Brand Info -->
+    <div style="flex: 1; min-width: 200px;">
+      <h2 style="margin-bottom: 10px;">PBurritsscratch</h2>
+      <p>Delicious bites, refreshing drinks, and sweet delights—all in one place.</p>
+    </div>
+
+    <!-- Navigation -->
+    <div style="flex: 1; min-width: 150px;">
+      <h3 style="margin-bottom: 10px;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li><a href="#" onclick="showHome()" style="color:white; text-decoration: none;">Home</a></li>
+        <li><a href="#" onclick="showMenu()" style="color:white; text-decoration: none;">Menu</a></li>
+        <li><a href="#" onclick="showAbout()" style="color:white; text-decoration: none;">About Us</a></li>
+        <li><a href="#" onclick="showTestimonials()" style="color:white; text-decoration: none;">Testimonials</a></li>
+        <li><a href="#" onclick="showContact()" style="color:white; text-decoration: none;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="flex: 1; min-width: 200px;">
+      <h3 style="margin-bottom: 10px;">Contact Us</h3>
+      <p>Email: pburritos@example.com</p>
+      <p>Phone: 0947 833 9676</p>
+      <p>Location: Purok 4 Dolores Magalang, Pampanga, Philippines</p>
+    </div>
+
+    <!-- Social Media -->
+    <div style="flex: 1; min-width: 150px;">
+      <h3 style="margin-bottom: 10px;">Follow Us</h3>
+      <div style="display: flex; gap: 10px;">
+        <a href="#" style="color: white; font-size: 1.2rem;">🌐</a>
+        <a href="#" style="color: white; font-size: 1.2rem;">📘</a>
+        <a href="#" style="color: white; font-size: 1.2rem;">📸</a>
+        <a href="#" style="color: white; font-size: 1.2rem;">🐦</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; font-size: 0.9rem;">
+    &copy; 2025 PBurritsscratch. All rights reserved.
+  </div>
+</footer>
+
+<script src="o.js"></script>
+</body>
+</html>

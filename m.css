@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+background: #f5f0e1;
+padding: 20px;
+color: #4a3b2b;
+}
+ body.dark {
+background: #2e2a26;
+color: #f5f0e1;
+}
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    background: #b77b57;
+  }
+  h1 {
+    font-size: 2.5rem;
+    color: #fffaf2;
+  }
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  .navbar button {
+    background: none;
+    border: none;
+    color: #fffaf2;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 15px;
+  }
+  .navbar button:hover {
+    background:  #9c5c38;
+    border-radius: 5px;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .filters button, .toggle-theme {
+    padding: 8px 12px;
+    margin-right: 10px;
+    background: #b77b57;
+    border: none;
+    color: #fffaf2;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .filters button.active {
+    background: #9c5c38;
+  }
+  .view-cart-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #b77b57;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    z-index: 100;
+    cursor: pointer;
+  }
+  .cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100%;
+    background: #fffaf2;
+    color: #4a3b2b;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+  .dark .cart-drawer {
+    background:#3b312b;
+    color:  #f5f0e1;
+  }
+  .cart-drawer.open {
+    right: 0;
+  }
+  #cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  #cart-items li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+  }
+  #cart-items button {
+    background: #e5533e;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .content {
+    padding: 20px;
+    background:  #fffaf2;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+  }
+  .food-card {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .food-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .food-card .food-info {
+    flex-grow: 1;
+  }
+  .food-card button {
+    padding: 8px 15px;
+    background: #9c5c38;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .food-card button:hover {
+    background: #b77b57;
+  }
+  .testimonial-card {
+flex: 1;
+min-width: 250px;
+background: #fdfdfd;
+border-radius: 12px;
+padding: 20px;
+text-align: center;
+box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+}
+
+.testimonial-card img {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 10px;
+box-shadow: 0 0 0 3px #FFD70055;
+}
+
+.testimonial-card .stars {
+margin-top: 10px;
+color: #FFD700;
+font-size: 18px;
+}
+
+#testimonial-section.show {
+opacity: 1 !important;
+}
+
+#product-highlights {
+padding: 3rem 1rem;
+text-align: center;
+}
+
+#product-highlights h2 {
+font-size: 2rem;
+margin-bottom: 2rem;
+}
+
+.highlight-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 2rem;
+}
+
+.highlight-card {
+background: #fff;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+padding: 1rem;
+max-width: 250px;
+text-align: left;
+transition: transform 0.3s;
+}
+
+.highlight-card:hover {
+transform: scale(1.05);
+}
+
+.highlight-card img {
+width: 100%;
+border-radius: 8px;
+margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+font-size: 1.2rem;
+margin: 0.5rem 0;
+color:#1e1e1e
+}
+
+.highlight-card p {
+font-size: 0.95rem;
+color: #555;
+}
+
+body.dark footer {
+background:  #b77b57;
+color: white;
+}
+
+body.dark footer a {
+color: #f5f0e1;
+}
